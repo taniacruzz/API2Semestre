@@ -26,6 +26,7 @@ public class ResetPassword {
 
         if (!verify(currentPassword, novaSenha, repitaNovaSenha)) {
             displayPopup(Alert.AlertType.ERROR, "Erro ao alterar senha", "A senha inserida está incorreta", "");
+            return;
         }
 
         QueryLibs.updateUserPassword(Authentication.getCurrentUser().getId(), novaSenha);
